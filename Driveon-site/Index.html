@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>PitLane Agency — Communication automobile · Pilotes · Raids</title>
+  <meta name="description" content="PitLane Agency, agence de communication spécialisée automobile : pilotes, écuries, entreprises auto et raids humanitaires." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+  <div class="entry-screen" id="entryScreen" role="dialog" aria-modal="true" aria-label="Écran d'accueil PitLane">
+    <div class="entry-bg" aria-hidden="true"></div>
+    <div class="entry-content">
+      <div class="entry-logo" aria-hidden="true">
+        <img src="./images/Logo-PL-VF.png" alt="" class="entry-logo-img" />
+      </div>
+
+      <h1 class="entry-title">PITLANE</h1>
+      <p class="entry-sub">Communication · Marketing · Partenariats</p>
+
+      <button class="entry-btn" id="entryBtn" aria-label="Entrer dans le site">
+        <span class="entry-btn-ring" aria-hidden="true"></span>
+        <span class="entry-btn-ring entry-btn-ring-2" aria-hidden="true"></span>
+        <span class="entry-btn-inner" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          ENTRER
+        </span>
+      </button>
+
+      <p class="entry-hint">Cliquez pour découvrir</p>
+    </div>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <button class="back-top" id="backTop" aria-label="Retour en haut">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/33000000000?text=Bonjour%20PitLane%2C%20je%20souhaite%20parler%20de%20mon%20projet."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contacter PitLane sur WhatsApp"
+  >
+    <span>✆</span>
+  </a>
+
+  <header class="navbar" id="navbar" role="banner">
+    <a href="#home" class="nav-brand" aria-label="PitLane — Accueil">
+      <img src="./images/Logo-PL-VF.png" alt="PitLane logo" class="nav-logo-img" />
+      <span class="nav-brand-name">PitLane</span>
+    </a>
+
+    <button
+      class="nav-burger"
+      id="navBurger"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#home" class="nav-link">Accueil</a>
+      <a href="#services" class="nav-link">Agence Auto</a>
+      <a href="#pilotes" class="nav-link">Pilotes</a>
+      <a href="#raid" class="nav-link">Raids</a>
+      <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#actualites" class="nav-link">Actus</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Changer la langue">FR</button>
+      <a href="#contact" class="nav-cta">Entrer en piste</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-video-section" id="home" aria-label="Vidéo de présentation PitLane">
+      <div class="hero-video-fullscreen">
+
+        <video
+          id="heroVideo"
+          class="hero-video"
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="./images/hero-fallback.jpg"
+          aria-hidden="true"
+        >
+          <source src="./videos/video.mp4" type="video/mp4" />
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+
+        <button class="video-sound-btn" id="videoSoundBtn" aria-label="Activer le son" aria-pressed="false">
+          <svg class="icon-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+
+        <div class="video-badge">
+          <span class="vbadge-dot"></span>
+          <span>PitLane · Motorsport</span>
+        </div>
+
+        <div class="hero-hud hud-tl">
+          <span>PITLANE</span>
+          <span>MOTORSPORT</span>
+        </div>
+        <div class="hero-hud hud-tr">
+          <span>RACING</span>
+          <span class="hud-live">LIVE</span>
+        </div>
+        <div class="hero-hud hud-bl">
+          <time id="heroTime">00:00:00</time>
+        </div>
+
+        <a class="scroll-ind" href="#hero-content" aria-label="Défiler vers le contenu">
+          <span class="scroll-ind-bar"></span>
+          <span>Scroll</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hero-content-section" id="hero-content">
+      <div class="hero-speed-lines"></div>
+
+      <div class="hero-text-wrap">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span data-i18n="heroEyebrow">Communication automobile · Sponsoring · Image premium</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <h2 class="hero-h1">
+          <span class="h1-line" data-i18n="heroTitle1">La communication automobile</span>
+          <span class="h1-line h1-muted" data-i18n="heroTitle2">pensée pour performer.</span>
+        </h2>
+
+        <p class="hero-desc" data-i18n="heroDesc">
+          PitLane accompagne marques, concessions, écuries, pilotes et projets automobiles
+          dans leur communication, leur visibilité, leur image de marque et leur recherche de partenaires.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#services" class="btn btn-red magnetic" data-i18n="heroBtn1">Découvrir nos offres</a>
+          <a href="#pilotes" class="btn btn-ghost magnetic" data-i18n="heroBtn2">Je suis pilote</a>
+        </div>
+
+        <div class="hero-tags">
+          <span>Sport Auto</span>
+          <span>Branding</span>
+          <span>Sponsoring</span>
+          <span>Réseaux sociaux</span>
+          <span>Vidéo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section position-section" id="positionnement">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Notre positionnement
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="position-grid">
+        <div class="position-copy" data-reveal>
+          <span class="kicker">Ce qu'on est vraiment</span>
+          <h2 class="sec-title">Une agence spécialisée automobile, pas une agence généraliste.</h2>
+          <p class="sec-desc">
+            PitLane Agency accompagne les marques, concessions, garages, écuries,
+            événements, pilotes et projets liés à l'univers automobile.
+          </p>
+          <p>
+            Notre spécialisation nous donne une longueur d'avance : nous parlons le même
+            langage que nos clients, nous connaissons les codes du secteur et nous connectons
+            les acteurs entre eux grâce au réseau Pit Lane.
+          </p>
+        </div>
+
+        <div class="compare-box" data-reveal>
+          <div class="compare-card compare-muted">
+            <h3>Agence généraliste</h3>
+            <ul>
+              <li>Ne connaît pas toujours les codes auto</li>
+              <li>Peu de réseau dans le secteur</li>
+              <li>Communication souvent trop corporate</li>
+              <li>Temps d'adaptation plus long</li>
+              <li>Ne crée pas de synergies entre acteurs</li>
+            </ul>
+          </div>
+
+          <div class="compare-card compare-red">
+            <h3>PitLane Agency</h3>
+            <ul>
+              <li>100% automobile et motorsport</li>
+              <li>Réseau Pit Lane actif</li>
+              <li>Communication authentique et passionnée</li>
+              <li>Opérationnelle rapidement sur chaque brief</li>
+              <li>Connexion entre pilotes, écuries, sponsors et médias</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section romain-section" id="romain">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Ambassadeur Officiel
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="romain-grid">
+        <div class="romain-visual" data-reveal>
+          <div class="romain-photo-wrap">
+            <img src="./images/Romain.png" alt="Romain Favre, pilote LMP3" class="romain-photo" loading="lazy" />
+            <div class="romain-photo-veil"></div>
+            <div class="romain-badge">
+              <span class="rbadge-dot"></span>
+              <div>
+                <strong>Romain Favre</strong>
+                <small>Pilote LMP3 · Ambassadeur PitLane</small>
+              </div>
+            </div>
+            <span class="romain-num">#RF</span>
+          </div>
+
+          <div class="romain-mini-cards">
+            <div class="rmc"><strong>LMP3</strong><span>Catégorie</span></div>
+            <div class="rmc"><strong>🇫🇷</strong><span>Français</span></div>
+            <div class="rmc"><strong>AMB.</strong><span>Officiel</span></div>
+          </div>
+        </div>
+
+        <div class="romain-copy">
+          <div data-reveal>
+            <span class="kicker">Égérie · PitLane</span>
+            <h2 class="sec-title">Romain Favre,<br>l'âme du motorsport PitLane.</h2>
+          </div>
+
+          <p class="romain-intro" data-reveal>
+            Pilote de compétition LMP3, Romain Favre incarne l'identité de PitLane.
+            Sa proximité avec le terrain, son exigence sportive et sa vision du milieu racing
+            renforcent notre crédibilité.
+          </p>
+
+          <div class="romain-timeline" data-reveal>
+            <div class="tl-item"><span class="tl-dot"></span><div><strong>Ambassadeur PitLane</strong><small>Image de marque · Consulting terrain</small></div></div>
+            <div class="tl-item"><span class="tl-dot"></span><div><strong>Pilote LMP3</strong><small>Compétition endurance · Motorsport premium</small></div></div>
+            <div class="tl-item"><span class="tl-dot"></span><div><strong>Vision terrain</strong><small>Conseils pilotes · Sponsoring · Partenariats</small></div></div>
+            <div class="tl-item"><span class="tl-dot"></span><div><strong>Rayonnement</strong><small>Pont entre marques, sponsors et compétition</small></div></div>
+          </div>
+
+          <blockquote class="romain-quote" data-reveal>
+            <span class="quote-mark">"</span>
+            <p>PitLane parle le langage de l'automobile : précis, moderne et orienté performance.</p>
+            <footer>
+              <strong>Romain Favre</strong>
+              <span>Pilote LMP3 · Ambassadeur PitLane</span>
+            </footer>
+          </blockquote>
+
+          <div class="romain-stats" data-reveal>
+            <div class="rstat"><strong data-count="100">0</strong><span>% Motorsport</span></div>
+            <div class="rstat"><strong>LMP3</strong><span>Catégorie</span></div>
+            <div class="rstat"><strong>AMB.</strong><span>Officiel</span></div>
+          </div>
+
+          <div class="romain-btns" data-reveal>
+            <a href="https://instagram.com/romainfavre_" target="_blank" rel="noopener noreferrer" class="btn btn-ghost magnetic">@romainfavre_</a>
+            <a href="#contact" class="btn btn-red magnetic" data-offer="Autre / à définir">Collaboration</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Offre principale
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Agence de communication automobile</span>
+        <h2 class="sec-title">Une offre complète pour les acteurs de l'automobile.</h2>
+        <p class="sec-desc">
+          Concessions, garages, préparateurs, équipementiers, écuries, événements et entreprises auto.
+        </p>
+      </div>
+
+      <div class="svc-filters" role="group" data-reveal>
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="strategy">Stratégie</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+        <button class="filter-btn" data-filter="content">Contenu</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc-card tilt-card" data-service="strategy" data-reveal>
+          <div class="svc-icon">🎯</div>
+          <span class="svc-num">01</span>
+          <h3>Stratégie de communication</h3>
+          <p>Audit, objectifs, cibles, messages clés et calendrier.</p>
+          <ul class="offer-list">
+            <li>Audit de l'existant</li>
+            <li>Stratégie éditoriale</li>
+            <li>Calendrier de communication</li>
+            <li>Recommandations ton et identité</li>
+          </ul>
+          <strong class="price-tag">Sur devis</strong>
+          <a href="#contact" class="svc-cta" data-offer="Communication automobile">Structurer <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-service="content" data-reveal>
+          <div class="svc-icon">📱</div>
+          <span class="svc-num">02</span>
+          <h3>Gestion réseaux sociaux</h3>
+          <p>Création, programmation, community management, reporting.</p>
+          <ul class="offer-list">
+            <li>Instagram, TikTok, Facebook, LinkedIn</li>
+            <li>Création visuelle et rédactionnelle</li>
+            <li>Gestion de communauté</li>
+            <li>Reporting mensuel</li>
+          </ul>
+          <strong class="price-tag">800 – 2 500 € / mois</strong>
+          <a href="#contact" class="svc-cta" data-offer="Réseaux sociaux">Développer <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-service="brand" data-reveal>
+          <div class="svc-icon">◆</div>
+          <span class="svc-num">03</span>
+          <h3>Identité visuelle & branding</h3>
+          <p>Une identité cohérente avec ton positionnement auto.</p>
+          <ul class="offer-list">
+            <li>Logo ou refonte</li>
+            <li>Charte graphique complète</li>
+            <li>Templates supports</li>
+            <li>Kit de communication</li>
+          </ul>
+          <strong class="price-tag">1 200 – 3 000 €</strong>
+          <a href="#contact" class="svc-cta" data-offer="Identité visuelle">Créer <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-service="content" data-reveal>
+          <div class="svc-icon">▶</div>
+          <span class="svc-num">04</span>
+          <h3>Production de contenus</h3>
+          <p>Photos, vidéos, textes, teasers, reportages et post-production.</p>
+          <ul class="offer-list">
+            <li>Shooting photo</li>
+            <li>Production vidéo</li>
+            <li>Rédaction web et réseaux sociaux</li>
+            <li>Montage et post-production</li>
+          </ul>
+          <strong class="price-tag">Sur devis</strong>
+          <a href="#contact" class="svc-cta" data-offer="Production de contenus">Produire <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-service="business" data-reveal>
+          <div class="svc-icon">📰</div>
+          <span class="svc-num">05</span>
+          <h3>Relations presse & médias</h3>
+          <p>Journalistes, médias spécialisés, influenceurs et podcasts auto.</p>
+          <ul class="offer-list">
+            <li>Communiqués de presse</li>
+            <li>Médias spécialisés auto</li>
+            <li>Influenceurs motorsport</li>
+            <li>Suivi des retombées</li>
+          </ul>
+          <strong class="price-tag">600 – 1 500 € / opération</strong>
+          <a href="#contact" class="svc-cta" data-offer="Relations presse">Médiatiser <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-service="content" data-reveal>
+          <div class="svc-icon">⚡</div>
+          <span class="svc-num">06</span>
+          <h3>Événementiel automobile</h3>
+          <p>Communication autour des salons, trackdays et lancements.</p>
+          <ul class="offer-list">
+            <li>Communication avant / pendant / après</li>
+            <li>Supports visuels dédiés</li>
+            <li>Couverture photo et vidéo</li>
+            <li>Diffusion post-événement</li>
+          </ul>
+          <strong class="price-tag">Sur devis</strong>
+          <a href="#contact" class="svc-cta" data-offer="Événementiel">Organiser <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card svc-card-featured" data-service="business" data-reveal>
+          <div class="svc-icon">🤝</div>
+          <span class="svc-num">07</span>
+          <h3>Sponsoring & partenariats</h3>
+          <p>Structuration de deals entre entreprises, pilotes, écuries et événements.</p>
+          <ul class="offer-list">
+            <li>Identification des opportunités</li>
+            <li>Dossier partenariat</li>
+            <li>Négociation des deals</li>
+            <li>Reporting ROI mensuel</li>
+          </ul>
+          <strong class="price-tag">500 € + 8% commission</strong>
+          <a href="#contact" class="svc-cta" data-offer="Sponsoring & partenariats">Connecter <em>→</em></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pilots-section" id="pilotes">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Pack Pilote
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="pilots-banner" data-reveal>
+        <span class="kicker">Pour pilotes amateurs et semi-professionnels</span>
+        <h2 class="sec-title">Sur la piste, tu pilotes.<br>En dehors, <span class="accent-red">on s'occupe de tout.</span></h2>
+        <p>
+          PitLane accompagne les pilotes dans leur image, leur visibilité,
+          leur dossier sponsoring et leur recherche de partenaires.
+        </p>
+      </div>
+
+      <div class="pilots-grid">
+        <div class="pilot-card pilot-card-main tilt-card" data-reveal>
+          <span class="pilot-num">01</span>
+          <h3>Starter Pack</h3>
+          <p>Le point de départ obligatoire pour professionnaliser ton image avant la prospection.</p>
+          <ul class="pilot-list">
+            <li>Audit image actuelle</li>
+            <li>Charte graphique pilote</li>
+            <li>Dossier sponsoring PDF 7 pages</li>
+            <li>Kit réseaux sociaux</li>
+            <li>Wordings prêts à l'emploi</li>
+            <li>Calendrier éditorial 4 semaines</li>
+            <li>Formation communication 1h</li>
+          </ul>
+          <strong class="price-tag">600 – 900 €</strong>
+          <a href="#contact" class="btn btn-red" data-offer="Starter Pack pilote">Créer mon Starter Pack</a>
+        </div>
+
+        <div class="pilot-card tilt-card" data-reveal>
+          <span class="pilot-num">02</span>
+          <h3>Sponsor Hunt</h3>
+          <p>On cherche les sponsors à ta place : ciblage, approche, relances et deals.</p>
+          <ul class="pilot-list">
+            <li>20 sponsors qualifiés</li>
+            <li>Emails personnalisés</li>
+            <li>Relances et réponses</li>
+            <li>Négociation partenariat</li>
+            <li>Reporting mensuel sponsor</li>
+          </ul>
+          <strong class="price-tag">300 € + 10%</strong>
+          <a href="#contact" class="btn btn-ghost" data-offer="Sponsor Hunt pilote">Trouver des sponsors</a>
+        </div>
+
+        <div class="pilot-card tilt-card" data-reveal>
+          <span class="pilot-num">03</span>
+          <h3>Media Boost</h3>
+          <p>Activation de médias, journalistes, radios locales et créateurs motorsport.</p>
+          <ul class="pilot-list">
+            <li>Communiqués ciblés</li>
+            <li>Journalistes sport auto</li>
+            <li>Podcasts et radios</li>
+            <li>Créateurs motorsport</li>
+            <li>Couverture post-course</li>
+          </ul>
+          <strong class="price-tag">400 – 700 €</strong>
+          <a href="#contact" class="btn btn-ghost" data-offer="Media Boost pilote">Booster ma visibilité</a>
+        </div>
+
+        <div class="pilot-card tilt-card" data-reveal>
+          <span class="pilot-num">04</span>
+          <h3>Season Manager</h3>
+          <p>Accompagnement complet sur toute une saison : image, sponsors, médias, réseau.</p>
+          <ul class="pilot-list">
+            <li>Starter Pack inclus</li>
+            <li>Sponsor Hunt inclus</li>
+            <li>Media Boost inclus</li>
+            <li>Accès réseau Pit Lane</li>
+            <li>Point mensuel 30 min</li>
+            <li>Mise en relation écuries</li>
+          </ul>
+          <strong class="price-tag">1 500 – 2 500 € + 8%</strong>
+          <a href="#contact" class="btn btn-ghost" data-offer="Season Manager pilote">Gérer ma saison</a>
+        </div>
+      </div>
+
+      <div class="sponsor-table-wrap" data-reveal>
+        <h3>Niveaux de partenariat sponsor</h3>
+        <div class="table-scroll">
+          <table class="sponsor-table">
+            <thead>
+              <tr>
+                <th>Niveau</th>
+                <th>Visibilité</th>
+                <th>Contreparties principales</th>
+                <th>Budget typique</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sponsor Titre</td>
+                <td>Nom + logo principal partout</td>
+                <td>Logo voiture/combi, posts dédiés, hospitalité exclusive</td>
+                <td>15 000 – 50 000 €</td>
+              </tr>
+              <tr>
+                <td>Sponsor Principal</td>
+                <td>Logo position secondaire</td>
+                <td>Logo avant voiture, 4 posts/mois, 2 hospitalities</td>
+                <td>5 000 – 15 000 €</td>
+              </tr>
+              <tr>
+                <td>Sponsor Associé</td>
+                <td>Logo visible</td>
+                <td>Logo voiture, 2 posts/mois, 1 hospitalité</td>
+                <td>2 000 – 5 000 €</td>
+              </tr>
+              <tr>
+                <td>Sponsor Technique</td>
+                <td>Logo discret + produit</td>
+                <td>Mentions réseaux, photos produit, logo supports</td>
+                <td>En nature / 500 – 2 000 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="team-block" data-reveal>
+        <div class="sec-head center team-head">
+          <span class="kicker">Ils nous font confiance</span>
+          <h3 class="team-title">Nos pilotes & équipages accompagnés</h3>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card tilt-card">
+            <div class="team-photo-wrap">
+              <img src="./images/Romain.png" alt="Romain Favre, pilote LMP3" class="team-photo" loading="lazy" />
+              <div class="team-photo-veil"></div>
+              <span class="team-discipline">Endurance</span>
+            </div>
+            <div class="team-info">
+              <h4>Romain Favre</h4>
+              <p class="team-subtitle">Pilote LMP3 · Ambassadeur</p>
+              <p class="team-desc">Pilote endurance LMP3, ambassadeur officiel PitLane.</p>
+              <a href="#romain" class="team-link">Voir le profil <em>→</em></a>
+            </div>
+          </article>
+
+          <article class="team-card tilt-card">
+            <div class="team-photo-wrap">
+              <img src="./images/rallye-savoie.jpg" alt="Nathan Nadeau et Rémy Bayet, Rallye Savoie" class="team-photo" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'" />
+              <div class="team-photo-veil"></div>
+              <span class="team-discipline">Rallye</span>
+            </div>
+            <div class="team-info">
+              <h4>Nathan Nadeau & Rémy Bayet</h4>
+              <p class="team-subtitle">Équipage Rallye · Savoie</p>
+              <p class="team-desc">Duo pilote-copilote engagé sur les rallyes de Savoie.</p>
+              <a href="#contact" class="team-link" data-offer="Sponsor Hunt pilote">Soutenir l'équipe <em>→</em></a>
+            </div>
+          </article>
+
+          <article class="team-card tilt-card">
+            <div class="team-photo-wrap">
+              <img src="./images/205-raid.jpg" alt="Nathan Nadeau, 205 Raid" class="team-photo" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'" />
+              <div class="team-photo-veil"></div>
+              <span class="team-discipline team-discipline-solidaire">Raid solidaire</span>
+            </div>
+            <div class="team-info">
+              <h4>Nathan Nadeau</h4>
+              <p class="team-subtitle">205 Raid · Humanitaire</p>
+              <p class="team-desc">Engagé sur le 205 Raid à bord d'une Peugeot 205.</p>
+              <a href="#contact" class="team-link" data-offer="Pack Raid / 4L Trophy">Soutenir le projet <em>→</em></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section raid-section" id="raid">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Pack Raid Humanitaire
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">4L Trophy & aventures solidaires</span>
+        <h2 class="sec-title">Quand la course devient une cause,<br>le sponsoring devient une évidence.</h2>
+        <p class="sec-desc">
+          PitLane accompagne les équipages engagés dans des raids humanitaires pour construire leur image,
+          trouver des sponsors et valoriser leur aventure.
+        </p>
+      </div>
+
+      <div class="raid-arguments" data-reveal>
+        <div class="raid-argument-card">
+          <h3>Pourquoi les raids attirent les sponsors</h3>
+          <ul>
+            <li>Valeurs positives : solidarité, jeunesse, aventure</li>
+            <li>Excellent angle RSE pour les entreprises</li>
+            <li>Budget d'entrée accessible</li>
+            <li>Couverture médiatique naturelle</li>
+            <li>Contenu riche avant, pendant et après</li>
+          </ul>
+        </div>
+
+        <div class="raid-argument-card">
+          <h3>Nos arguments de vente</h3>
+          <ul>
+            <li>Porte d'entrée idéale vers le sponsoring</li>
+            <li>Ciblage PME engagées</li>
+            <li>Storytelling humain et émotionnel</li>
+            <li>Image jeune et dynamique</li>
+            <li>Reporting post-raid sponsors</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="svc-grid raid-grid">
+        <article class="svc-card tilt-card" data-reveal>
+          <div class="svc-icon">🌍</div>
+          <span class="svc-num">01</span>
+          <h3>Dossier Solidaire</h3>
+          <p>Dossier sponsoring autour des valeurs humaines, solidaires et RSE du projet.</p>
+          <ul class="offer-list">
+            <li>Storytelling humanitaire</li>
+            <li>Dossier sponsor orienté impact social</li>
+            <li>Grille partenariat PME</li>
+            <li>Ciblage entreprises solidaires</li>
+          </ul>
+          <strong class="price-tag">400 – 600 €</strong>
+          <a href="#contact" class="svc-cta" data-offer="Pack Raid / 4L Trophy">Créer mon dossier <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card" data-reveal>
+          <div class="svc-icon">📸</div>
+          <span class="svc-num">02</span>
+          <h3>Contenu Aventure</h3>
+          <p>Stratégie de contenu avant, pendant et après le raid.</p>
+          <ul class="offer-list">
+            <li>Stratégie 3 phases</li>
+            <li>Templates réseaux sociaux</li>
+            <li>Guide de prise de vue</li>
+            <li>Montage vidéo post-raid</li>
+          </ul>
+          <strong class="price-tag">300 – 500 €</strong>
+          <a href="#contact" class="svc-cta" data-offer="Pack Raid / 4L Trophy">Préparer mon contenu <em>→</em></a>
+        </article>
+
+        <article class="svc-card tilt-card svc-card-featured" data-reveal>
+          <div class="svc-icon">🏁</div>
+          <span class="svc-num">03</span>
+          <h3>Pack Solidaire Complet</h3>
+          <p>Accompagnement de A à Z pour trouver des sponsors et valoriser le projet.</p>
+          <ul class="offer-list">
+            <li>Dossier sponsoring complet</li>
+            <li>Prospection active 15 sponsors</li>
+            <li>Contenu sur les 3 phases</li>
+            <li>Accès réseau Pit Lane</li>
+          </ul>
+          <strong class="price-tag">900 – 1 200 € + 8%</strong>
+          <a href="#contact" class="svc-cta" data-offer="Pack Raid / 4L Trophy">Lancer mon projet <em>→</em></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="tarifs">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Grille tarifaire
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Vision d'ensemble</span>
+        <h2 class="sec-title">Des offres claires, adaptées à chaque projet.</h2>
+        <p class="sec-desc">Chaque mission démarre avec un devis signé. Les commissions s'appliquent uniquement si un deal est signé.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="pricing-card" data-reveal>
+          <h3>Communication automobile</h3>
+          <ul>
+            <li><span>Stratégie de communication</span><strong>Sur devis</strong></li>
+            <li><span>Gestion réseaux sociaux</span><strong>800 – 2 500 €/mois</strong></li>
+            <li><span>Identité visuelle complète</span><strong>1 200 – 3 000 €</strong></li>
+            <li><span>Production de contenus</span><strong>Sur devis</strong></li>
+            <li><span>Relations presse & médias</span><strong>600 – 1 500 €</strong></li>
+            <li><span>Événementiel</span><strong>Sur devis</strong></li>
+            <li><span>Sponsoring & partenariats</span><strong>500 € + 8%</strong></li>
+          </ul>
+        </article>
+
+        <article class="pricing-card pricing-card-featured" data-reveal>
+          <div class="pricing-badge">Offre phare</div>
+          <h3>Pack Pilote</h3>
+          <ul>
+            <li><span>Starter Pack</span><strong>600 – 900 €</strong></li>
+            <li><span>Sponsor Hunt</span><strong>300 € + 10%</strong></li>
+            <li><span>Media Boost</span><strong>400 – 700 €</strong></li>
+            <li><span>Season Manager</span><strong>1 500 – 2 500 € + 8%</strong></li>
+          </ul>
+        </article>
+
+        <article class="pricing-card" data-reveal>
+          <h3>Raid Humanitaire</h3>
+          <ul>
+            <li><span>Dossier Solidaire</span><strong>400 – 600 €</strong></li>
+            <li><span>Contenu Aventure</span><strong>300 – 500 €</strong></li>
+            <li><span>Pack Solidaire Complet</span><strong>900 – 1 200 € + 8%</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pricing-note" data-reveal>
+        <p>Tarif bêta disponible pour les 3 premiers clients : <strong>-30% en échange d'un témoignage.</strong></p>
+      </div>
+    </section>
+
+    <section class="section why-section" id="pourquoi">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Pourquoi PitLane
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Notre différence concrète</span>
+        <h2 class="sec-title">Une agence pensée pour connecter tout l'écosystème automobile.</h2>
+        <p class="sec-desc">
+          PitLane structure une image, active des partenaires et crée des synergies entre acteurs du secteur auto.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card tilt-card" data-reveal><span>01</span><h3>Spécialisation automobile</h3><p>L'automobile est notre unique territoire.</p></article>
+        <article class="why-card tilt-card" data-reveal><span>02</span><h3>Réseau Pit Lane</h3><p>Pilotes, écuries, sponsors, médias et partenaires.</p></article>
+        <article class="why-card tilt-card" data-reveal><span>03</span><h3>Expérience terrain</h3><p>PitLane est né d'un vrai problème vécu dans le sport auto.</p></article>
+        <article class="why-card tilt-card" data-reveal><span>04</span><h3>ROI documenté</h3><p>Reportings concrets : portée, engagement, visibilité, activations.</p></article>
+      </div>
+    </section>
+
+    <section class="section portal-section" id="espace-client">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Espace client
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="portal-grid">
+        <div class="portal-copy" data-reveal>
+          <span class="kicker">Suivi privé</span>
+          <h2 class="sec-title">Un espace dédié pour suivre ton projet.</h2>
+          <p class="sec-desc">
+            Documents livrés, prospection sponsors, reporting, calendrier, contenus validés :
+            tout est centralisé dans un tableau de bord client.
+          </p>
+
+          <div class="portal-actions">
+            <button class="btn btn-red magnetic" id="openPortalBtn" type="button">Accéder à mon espace</button>
+            <a href="#contact" class="btn btn-ghost magnetic" data-offer="Espace client / suivi de projet">Demander un accès</a>
+          </div>
+        </div>
+
+        <div class="portal-preview" data-reveal>
+          <div class="portal-window">
+            <div class="portal-window-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="portal-row"><strong>Starter Pack</strong><em>Livré à 70%</em></div>
+            <div class="portal-progress"><span style="width:70%"></span></div>
+            <div class="portal-row"><strong>Sponsors contactés</strong><em>12 / 20</em></div>
+            <div class="portal-progress"><span style="width:60%"></span></div>
+            <div class="portal-row"><strong>Reporting mensuel</strong><em>À venir</em></div>
+            <div class="portal-progress"><span style="width:35%"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blog-section" id="actualites">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Actualités
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Courses · Conseils · Coulisses</span>
+        <h2 class="sec-title">Le paddock PitLane.</h2>
+        <p class="sec-desc">Articles, retours de course et conseils concrets pour mieux communiquer dans le sport auto.</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card tilt-card" data-reveal>
+          <img src="./images/hero-fallback.jpg" alt="Voiture de course" loading="lazy">
+          <div>
+            <span class="blog-tag">Conseil sponsoring</span>
+            <h3>5 erreurs qui font fuir les sponsors auto</h3>
+            <p>Image amateur, dossier mal structuré, absence de ROI : les pièges à éviter.</p>
+            <a href="#leadmagnet">Lire le guide <em>→</em></a>
+          </div>
+        </article>
+
+        <article class="blog-card tilt-card" data-reveal>
+          <img src="./images/rallye-savoie.jpg" alt="Rallye Savoie" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'">
+          <div>
+            <span class="blog-tag">Rallye</span>
+            <h3>Préparer une saison rallye avec une image pro</h3>
+            <p>Comment transformer un équipage local en projet sponsorisable.</p>
+            <a href="#contact" data-offer="Starter Pack pilote">Structurer mon image <em>→</em></a>
+          </div>
+        </article>
+
+        <article class="blog-card tilt-card" data-reveal>
+          <img src="./images/205-raid.jpg" alt="205 Raid" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'">
+          <div>
+            <span class="blog-tag">Raid solidaire</span>
+            <h3>Pourquoi un raid humanitaire parle aux PME</h3>
+            <p>RSE, contenu émotionnel, proximité : un terrain fort pour les sponsors.</p>
+            <a href="#contact" data-offer="Pack Raid / 4L Trophy">Lancer mon raid <em>→</em></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="portfolio">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Portfolio
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Images · Contenus · Terrain</span>
+        <h2 class="sec-title">La preuve par l'image.</h2>
+        <p class="sec-desc">Une galerie pour montrer l'univers PitLane : paddock, pilotes, rallye, raid, contenu premium.</p>
+      </div>
+
+      <div class="gallery-filters" data-reveal>
+        <button class="gallery-filter active" data-gallery-filter="all">Tous</button>
+        <button class="gallery-filter" data-gallery-filter="racing">Racing</button>
+        <button class="gallery-filter" data-gallery-filter="rallye">Rallye</button>
+        <button class="gallery-filter" data-gallery-filter="raid">Raid</button>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-item" data-gallery="racing" data-img="./images/Flyer Pilote.png">
+          <img src="./images/Flyer Pilote.png" alt="Romain Favre" loading="lazy">
+          <span>Romain Favre · LMP3</span>
+        </button>
+
+        <button class="gallery-item" data-gallery="rallye" data-img="./images/rallye-savoie.jpg">
+          <img src="./images/rallye-savoie.jpg" alt="Rallye Savoie" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'">
+          <span>Nathan & Rémy · Rallye Savoie</span>
+        </button>
+
+        <button class="gallery-item" data-gallery="raid" data-img="./images/205-raid.jpg">
+          <img src="./images/205-raid.jpg" alt="205 Raid" loading="lazy" onerror="this.src='./images/placeholder-team.jpg'">
+          <span>Nathan · 205 Raid</span>
+        </button>
+
+        <button class="gallery-item" data-gallery="racing" data-img="./images/hero-fallback.jpg">
+          <img src="./images/hero-fallback.jpg" alt="Motorsport" loading="lazy">
+          <span>Contenu Motorsport</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section lead-section" id="leadmagnet">
+      <div class="lead-card" data-reveal>
+        <div>
+          <span class="kicker">Guide gratuit</span>
+          <h2 class="sec-title">10 erreurs qui coûtent des sponsors.</h2>
+          <p>
+            Télécharge le mini-guide PitLane pour comprendre pourquoi les sponsors ne répondent pas
+            et comment rendre ton projet plus crédible.
+          </p>
+        </div>
+
+        <button class="btn btn-red magnetic" id="openLeadBtn" type="button">Recevoir le guide</button>
+      </div>
+    </section>
+
+    <section class="section playlist-section" id="playlist">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Playlist
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="playlist-grid">
+        <div data-reveal>
+          <span class="kicker">PitLane Radio</span>
+          <h2 class="sec-title">La playlist d'avant-course.</h2>
+          <p class="sec-desc">
+            Un élément de communauté simple : ce que les pilotes écoutent avant de monter dans le baquet.
+          </p>
+        </div>
+
+        <div class="playlist-embed" data-reveal>
+          <iframe
+            title="Playlist PitLane"
+            style="border-radius:18px"
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8FwnYE6PRvL?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        FAQ
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Questions fréquentes</span>
+        <h2 class="sec-title">Avant de prendre le départ.</h2>
+        <p class="sec-desc">
+          Les questions les plus fréquentes avant de démarrer un accompagnement PitLane.
+        </p>
+      </div>
+
+      <div class="faq-list" data-reveal>
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Pourquoi le Starter Pack est-il nécessaire avant le Sponsor Hunt ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Parce qu'on ne prospecte pas avec une image amateur. Le Starter Pack donne au pilote une identité claire, un dossier crédible et des supports prêts à envoyer aux sponsors.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            En combien de temps peut-on espérer des retours sponsors ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>En général, les premiers retours arrivent après les premières relances. Le délai dépend du projet, du budget demandé, du calendrier sportif et de la qualité des sponsors ciblés.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Et si aucun sponsor ne signe ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>La commission ne s'applique que si un deal est signé. Le forfait Sponsor Hunt couvre le travail de recherche, approche, relance et suivi.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Comment fonctionne la commission de 10% ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Elle est calculée uniquement sur le montant du partenariat signé grâce à la prospection PitLane. Exemple : pour un deal à 2 000 €, la commission est de 200 €.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Le sponsoring est-il déductible pour l'entreprise ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Le sponsoring peut généralement être traité comme une dépense professionnelle si l'entreprise obtient une contrepartie réelle de visibilité. Le sponsor doit toutefois valider le traitement avec son expert-comptable.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Travaillez-vous avec des pilotes débutants ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, à condition que le projet soit sérieux et structuré. PitLane accompagne surtout les pilotes amateurs et semi-professionnels qui veulent professionnaliser leur image.</p>
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button">
+            Peut-on payer en plusieurs fois ?
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, selon le montant et le type de prestation. Les modalités sont définies dans le devis avant le démarrage de la mission.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section partners-section" id="partenaires">
+      <div class="sec-label" data-reveal>
+        <span class="sec-label-line"></span>
+        Partenaires
+        <span class="sec-label-line"></span>
+      </div>
+
+      <div class="sec-head center" data-reveal>
+        <span class="kicker">Notre écosystème</span>
+        <h2 class="sec-title">Des partenaires qui croient en l'excellence automobile.</h2>
+      </div>
+
+      <div class="logo-carousel" data-reveal>
+        <div class="logo-track">
+          <div class="logo-item"><span>AUTO PRO</span></div>
+          <div class="logo-item"><span>RACING CO</span></div>
+          <div class="logo-item"><span>MOTOR TECH</span></div>
+          <div class="logo-item"><span>SPEED PARTS</span></div>
+          <div class="logo-item"><span>CIRCUIT X</span></div>
+          <div class="logo-item"><span>PRESTIGE AUTO</span></div>
+          <div class="logo-item"><span>AUTO PRO</span></div>
+          <div class="logo-item"><span>RACING CO</span></div>
+          <div class="logo-item"><span>MOTOR TECH</span></div>
+          <div class="logo-item"><span>SPEED PARTS</span></div>
+          <div class="logo-item"><span>CIRCUIT X</span></div>
+          <div class="logo-item"><span>PRESTIGE AUTO</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-bg-deco"></div>
+
+      <div class="contact-wrap">
+        <div class="contact-copy" data-reveal>
+          <span class="kicker">Parlons de votre projet</span>
+          <h2 class="sec-title">Prêt à passer la ligne de départ ?</h2>
+          <p>
+            Que vous soyez une marque, un pilote ou un acteur du sport auto,
+            PitLane crée l'expérience qui donne de la puissance à votre image.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:contact@pitlane.fr" class="clink"><span>✉</span> contact@pitlane.fr</a>
+            <button class="clink clink-btn" type="button" id="openBookingBtn"><span>📅</span> Réserver un appel</button>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal novalidate>
+          <label for="contact-name">
+            Nom
+            <input type="text" id="contact-name" name="name" placeholder="Votre nom" required autocomplete="name" />
+          </label>
+
+          <label for="contact-email">
+            Email
+            <input type="email" id="contact-email" name="email" placeholder="votre@email.fr" required autocomplete="email" />
+          </label>
+
+          <label for="contact-profile">
+            Profil
+            <select id="contact-profile" name="profile">
+              <option value="entreprise">Entreprise automobile</option>
+              <option value="pilote">Pilote</option>
+              <option value="garage">Garage / Concession</option>
+              <option value="ecurie">Écurie / Club automobile</option>
+              <option value="evenement">Événement motorsport</option>
+              <option value="raid">Raid humanitaire / 4L Trophy</option>
+              <option value="sponsor">Sponsor / Partenaire</option>
+              <option value="autre">Autre</option>
+            </select>
+          </label>
+
+          <label for="contact-offer">
+            Offre souhaitée
+            <select id="contact-offer" name="offer">
+              <option value="">— Sélectionnez —</option>
+              <option value="Communication automobile">Communication automobile</option>
+              <option value="Réseaux sociaux">Réseaux sociaux</option>
+              <option value="Identité visuelle">Identité visuelle</option>
+              <option value="Production de contenus">Production de contenus</option>
+              <option value="Relations presse">Relations presse</option>
+              <option value="Événementiel">Événementiel</option>
+              <option value="Sponsoring & partenariats">Sponsoring & partenariats</option>
+              <option value="Starter Pack pilote">Starter Pack pilote</option>
+              <option value="Sponsor Hunt pilote">Sponsor Hunt pilote</option>
+              <option value="Media Boost pilote">Media Boost pilote</option>
+              <option value="Season Manager pilote">Season Manager pilote</option>
+              <option value="Pack Raid / 4L Trophy">Pack Raid / 4L Trophy</option>
+              <option value="Espace client / suivi de projet">Espace client / suivi de projet</option>
+              <option value="Autre / à définir">Autre / à définir</option>
+            </select>
+          </label>
+
+          <label for="contact-message">
+            Message
+            <textarea id="contact-message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-red">Envoyer ma demande</button>
+          <p class="form-ok" id="formOk" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div>
+        <a href="#home" class="nav-brand">
+          <img src="./images/Logo-PL-VF.png" alt="PitLane logo" class="nav-logo-img" />
+          <span class="nav-brand-name">PitLane</span>
+        </a>
+        <p>Agence de communication automobile · Pilotes · Écuries · Entreprises auto · Raids humanitaires.</p>
+      </div>
+
+      <nav class="footer-col">
+        <strong>Navigation</strong>
+        <a href="#services">Agence Auto</a>
+        <a href="#pilotes">Pack Pilote</a>
+        <a href="#raid">Raids Humanitaires</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <nav class="footer-col">
+        <strong>Contact</strong>
+        <a href="mailto:contact@pitlane.fr">contact@pitlane.fr</a>
+        <a href="#contact">Formulaire</a>
+        <a href="#leadmagnet">Guide gratuit</a>
+        <a href="#espace-client">Espace client</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> PitLane Agency. Tous droits réservés.</p>
+      <p>contact@pitlane.fr</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="leadModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <span class="kicker">Guide gratuit</span>
+      <h3>Recevoir le guide sponsoring</h3>
+      <p>Entre ton email pour recevoir le guide “10 erreurs qui coûtent des sponsors”.</p>
+      <form id="leadForm" class="modal-form">
+        <input type="email" name="leadEmail" placeholder="ton@email.fr" required />
+        <button class="btn btn-red" type="submit">Recevoir le guide</button>
+        <p class="form-ok" id="leadOk"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card modal-card-wide">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <span class="kicker">Appel découverte</span>
+      <h3>Réserver un créneau</h3>
+      <p>Remplace l'URL ci-dessous par ton lien Calendly ou Cal.com.</p>
+      <iframe
+        title="Calendly PitLane"
+        src="https://calendly.com/"
+        width="100%"
+        height="520"
+        frameborder="0">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal" id="portalModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+
+  <div class="modal-card modal-card-wide portal-modal-card">
+    <button class="modal-close" type="button" data-close-modal>×</button>
+
+    <div class="portal-login" id="portalLogin">
+      <span class="kicker">Espace client</span>
+      <h3>Accès privé PitLane</h3>
+      <p>
+        Entre ton code d'accès pour ouvrir ton tableau de bord client.
+        Si tu n'as pas encore de code, demande ton accès à PitLane.
+      </p>
+
+      <form class="portal-login-form" id="portalLoginForm">
+        <label for="portalCode">
+          Code d'accès
+          <input
+            type="password"
+            id="portalCode"
+            name="portalCode"
+            placeholder="Ex : romain2025"
+            autocomplete="off"
+            required
+          />
+        </label>
+
+        <button class="btn btn-red" type="submit">Accéder à mon espace</button>
+
+        <p class="portal-error" id="portalError" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="portal-help">
+        <a href="#contact" data-close-modal data-offer="Espace client / suivi de projet">
+          Demander un accès →
+        </a>
+      </div>
+    </div>
+
+    <div class="portal-dashboard" id="portalDashboard" hidden>
+      <div class="portal-dashboard-head">
+        <div>
+          <span class="kicker">Tableau de bord</span>
+          <h3 id="portalName">Client PitLane</h3>
+          <p id="portalRole">Espace privé</p>
+        </div>
+
+        <button class="portal-logout" id="portalLogout" type="button">
+          Déconnexion
+        </button>
+      </div>
+
+      <div class="portal-private-grid">
+        <article class="portal-private-card">
+          <span>Projet</span>
+          <strong id="portalProject">Projet client</strong>
+        </article>
+
+        <article class="portal-private-card">
+          <span>Statut</span>
+          <strong id="portalStatus">En cours</strong>
+        </article>
+
+        <article class="portal-private-card">
+          <span>Référent</span>
+          <strong>PitLane Agency</strong>
+        </article>
+      </div>
+
+      <div class="portal-private-progress">
+        <div class="portal-progress-top">
+          <strong>Avancement global</strong>
+          <span id="portalProgressLabel">0%</span>
+        </div>
+        <div class="portal-progress">
+          <span id="portalProgressBar" style="width:0%"></span>
+        </div>
+      </div>
+
+      <div class="portal-private-section">
+        <h4>Documents & liens utiles</h4>
+        <div class="portal-links" id="portalLinks"></div>
+      </div>
+
+      <div class="portal-private-section">
+        <h4>Suivi rapide</h4>
+
+        <div class="portal-task-list" id="portalTasks">
+          <!-- Injecté en JS -->
+        </div>
+      </div>
+
+      <div class="portal-private-footer">
+        <a href="mailto:contact@pitlane.fr" class="btn btn-ghost">
+          Contacter PitLane
+        </a>
+        <a href="#contact" class="btn btn-red" data-close-modal data-offer="Espace client / suivi de projet">
+          Demander une mise à jour
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" id="lightboxClose">×</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
